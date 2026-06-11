@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-retro-bg text-retro-text;
+  }
+
+  ::selection {
+    @apply bg-retro-purple/40 text-white;
+  }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .text-retro-gradient {
+    @apply bg-retro-gradient bg-clip-text text-transparent;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #3f3f4a transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #3f3f4a;
+    border-radius: 3px;
+  }
+}
+
+/* Prose styles for chat messages (dark) */
+.prose {
+  @apply text-retro-text;
+}
+
+.prose pre {
+  @apply bg-[#1C1C22] text-retro-text rounded-lg p-4 overflow-x-auto text-xs border border-retro-border;
+}
+
+.prose code:not(pre code) {
+  @apply bg-retro-surface2 text-retro-accent rounded px-1.5 py-0.5 text-xs;
+}
+
+.prose a {
+  @apply text-retro-purple underline;
+}
+
+.prose strong {
+  @apply text-white;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  @apply text-white;
+}
+
+.prose blockquote {
+  @apply border-l-2 border-retro-border text-retro-muted;
+}
